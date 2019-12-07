@@ -1,0 +1,37 @@
+[debug] [2019-12-07T09:51:09.794Z] ----------------------------------------------------------------------
+[debug] [2019-12-07T09:51:09.796Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-12-07T09:51:09.796Z] CLI Version:   7.9.0
+[debug] [2019-12-07T09:51:09.796Z] Platform:      darwin
+[debug] [2019-12-07T09:51:09.796Z] Node Version:  v10.17.0
+[debug] [2019-12-07T09:51:09.797Z] Time:          Sat Dec 07 2019 22:51:09 GMT+1300 (New Zealand Daylight Time)
+[debug] [2019-12-07T09:51:09.797Z] ----------------------------------------------------------------------
+[debug] [2019-12-07T09:51:09.797Z] 
+[debug] [2019-12-07T09:51:09.804Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-07T09:51:09.805Z] > authorizing via signed-in user
+[debug] [2019-12-07T09:51:09.805Z] [iam] checking project friendlychat-c9506 for permissions ["firebase.projects.get"]
+[debug] [2019-12-07T09:51:09.806Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/friendlychat-c9506:testIamPermissions  
+
+[debug] [2019-12-07T09:51:11.980Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-07T09:51:11.982Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/friendlychat-c9506  
+ 
+[debug] [2019-12-07T09:51:13.153Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/azizahmed.khan/screens/gatsby/reactlearning/chat'...
+[info] 
+[debug] [2019-12-07T09:51:13.158Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/friendlychat-c9506/webApps/-/config  
+ 
+[info] ✔  functions: Using node@10 from host.
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2019-12-07T09:51:15.765Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/azizahmed.khan/screens/gatsby/reactlearning/chat/functions" for Cloud Functions...
+[debug] [2019-12-07T09:51:15.791Z] [worker-~diagnostic~-dead8f04-aba7-41e3-98e3-02965dfecd51]: Assigning socketPath: /var/folders/ss/8t1jyfjx7v31vv6qhs_k59xr0000gn/T/fire_emu_79768.sock
+[debug] [2019-12-07T09:51:15.791Z] [worker-~diagnostic~-dead8f04-aba7-41e3-98e3-02965dfecd51]: BUSY
+[info] i  hosting: Serving hosting files from: build
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2019-12-07T09:51:16.053Z] [runtime-status] [79768] Functions runtime initialized. {"cwd":"/Users/azizahmed.khan/screens/gatsby/reactlearning/chat/functions","node_version":"10.17.0"}
+[debug] [2019-12-07T09:51:16.055Z] [runtime-status] [79768] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2019-12-07T09:51:16.057Z] [runtime-status] [79768] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"/Users/azizahmed.khan/screens/gatsby/reactlearning/chat/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-12-07T09:51:16.058Z] [runtime-status] [79768] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/azizahmed.khan/screens/gatsby/reactlearning/chat/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-07T09:51:16.058Z] [runtime-status] [79768] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/azizahmed.khan/screens/gatsby/reactlearning/chat/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-12-07T09:51:16.112Z] [worker-~diagnostic~-dead8f04-aba7-41e3-98e3-02965dfecd51]: exited
+[debug] [2019-12-07T09:51:16.112Z] [worker-~diagnostic~-dead8f04-aba7-41e3-98e3-02965dfecd51]: FINISHED
