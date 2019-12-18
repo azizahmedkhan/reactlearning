@@ -10,12 +10,14 @@ import Components from "./Components/Components.jsx";
 import LandingPage from "./LandingPage/LandingPage.jsx";
 import ProfilePage from "./ProfilePage/ProfilePage.jsx";
 import LoginPage from "./LoginPage/LoginPage.jsx";
+import SalatTime from "./masjideumar/SalatTime.jsx";
 
 let hist = createMemoryHistory();
 
 export default () => (
   <Router history={hist}>
     <Switch>
+      <Route path="/mu-salat-time" component={SalatTime} />
       <Route path="/landing-page" component={LandingPage} />
       <Route path="/profile-page" component={ProfilePage} />
       <Route path="/login-page" component={LoginPage} />
