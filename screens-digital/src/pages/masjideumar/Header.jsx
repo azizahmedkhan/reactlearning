@@ -1,14 +1,26 @@
 import React, {useState, useEffect} from 'react';
 import Weather from './Weather'
 import HijriDate from './HijriDate'
+import image from "../../assets/img/masjideumar/bismillah-910299_1280.png"
+import masjideumarStyle from "../../assets/jss/masjideumarStyle.jsx";
+import { makeStyles } from '@material-ui/core/styles';
+
+
 
 function Header (){
-
-    return (
-        <div>
-            Header
+    const classes = masjideumarStyle();
+console.log(masjideumarStyle)
+    return (  
+        <div className={classes.weatherHeader}>
+            <div className={classes.mattService}><Weather /></div>
+            <div className={classes.headerImage}
+            style={{
+            backgroundImage: "url(" + image + ")" }}></div>
+            <div className={classes.hijriDate}><HijriDate /> </div>
+            <div className={classes.masjidName}>Masjid e Umar</div>
+            <div className={classes.locationOverlay}></div>
         </div>
     )
 }
 
-export default Header
+export default Header;

@@ -4,11 +4,12 @@ import { db } from '../../firebase';
 import Announcement from './Announcement'
 import Clock from './Clock'
 import Header from './Header'
-import HijriDate from './HijriDate'
 import JumaPanel from './JumaPanel'
-import MasjidName from './MasjidName'
-import Timinganel from './TimingsPanel'
-import Weather from './Weather'
+import TimingsPanel from './TimingsPanel'
+import image from "../../assets/img/masjideumar/light-cloud.jpg"
+import masjideumarStyle from "../../assets/jss/masjideumarStyle.jsx";
+import { mergeClasses } from '@material-ui/styles';
+
 
 function SalatTime() {
   const [fields, setFields] = useState([]);
@@ -22,17 +23,34 @@ function SalatTime() {
        console.log(fields)
     })
   }, [])
-
+  const classes = masjideumarStyle();
+  const prayerTimings = {'FAJAR':fields['FAJAR'],
+                         'ZUHAR':fields['ZUHAR'],
+                         'ASAR':fields['ASAR'],
+                         'MAGHRIB':fields['MAGHRIB'],
+                         'ISHA':fields['ISHA']}
+                        
   return (
-    <div className="Field">
-      <div className="FieldMain">
-        MAsjid E Umar
-      </div>
+    <div className={classes.sectionContainer}  style={{
+      backgroundImage: "url(" + image + ")" }}>>
+     
       <Header/>
-      <Announcement />
-      <Clock/>
-      <JumaPanel />
-      <Timinganel />
+      <div className={classes.weatherContentContainer}>
+      <div className={classes.leftPanel}>
+      <div className={classes.forecastItem}>
+        <Announcement />
+        </div></div>
+      <div className={classes.locationDetail}>
+        <Clock/>
+        </div>
+        <div className={classes.rightPanel}>
+          <div className={classes.forecastItem}>
+          <JumaPanel /></div>
+          </div>
+        <div className={classes.jumaatTimings}>
+          <div className={classes.forecasts}><TimingsPanel prayerTimings/> </div>
+        </div>
+      </div>
 
       <div className="FieldNav">
       {fields['FAJAR']}

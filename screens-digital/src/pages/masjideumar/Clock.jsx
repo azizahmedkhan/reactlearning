@@ -31,10 +31,12 @@ function Clock (){
    
 
     return (
-        <div>
-        <div className="locationDetail">
+        <div >
+        
         <div className="filler"></div>
-        <svg id="clock" viewBox="-20 -0 100 100">
+       
+        <svg 
+        id="clock" viewBox="0 0 100 100">
           <circle style={face} cx="50" cy="50" r="45" fillOpacity="0.2"/>
           <g id="hands">
             <rect id="hour" ref ={hour} style={hourStyle} x="48.5" y="12.5"
@@ -58,8 +60,7 @@ function Clock (){
             <text style ={num} x="25" y="21" fill="white">11</text>
           </g>
           </svg>
-         
-      </div>
+      
         </div>
     )
 }
