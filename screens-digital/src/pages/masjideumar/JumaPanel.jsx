@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 
-function JumaPanel (){
-
+function JumaPanel (data){
+    console.log('style is [', data.announcement)
     return (
         <div>
-            JumaPanel
+            {data.announcement}
         </div>
     )
 }

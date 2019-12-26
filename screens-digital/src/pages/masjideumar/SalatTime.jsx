@@ -37,29 +37,26 @@ function SalatTime() {
       <Header/>
       <div className={classes.weatherContentContainer}>
       <div className={classes.leftPanel}>
-      <div className={classes.forecastItem}>
-        <Announcement />
-        </div></div>
+      
+      <JumaPanel announcement = {fields['ANNOUNCEMENT']} />
+        </div>
       <div className={classes.locationDetail}>
         <Clock/>
         </div>
         <div className={classes.rightPanel}>
-          <div className={classes.forecastItem}>
-          <JumaPanel /></div>
+         
+          <JumaPanel announcement = {fields['JUMA']} />
+          
           </div>
-        <div className={classes.jumaatTimings}>
-          <div className={classes.forecasts}><TimingsPanel prayerTimings/> </div>
-        </div>
+        <div className={classes.jumaatTimings}>Jamaat Timings </div>
+        <div className={classes.timingPanel}>
+          <TimingsPanel prayerTimings = {prayerTimings} style= {classes.prayerTime}/> 
+          </div>
+        
       </div>
 
       <div className="FieldNav">
-      {fields['FAJAR']}
-      {fields['ZUHAR']}
-      {fields['ASAR']}
-      {fields['MAGHRIB']}
-      {fields['ISHA']}
-      {fields['JUMA']}
-      {fields['ANNOUNCEMENT']}
+      
     </div>
     </div>
   );

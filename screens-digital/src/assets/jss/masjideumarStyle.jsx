@@ -21,7 +21,10 @@ const masjideumarStyle =  makeStyles({
         float: 'left',
         backgroundImage: 'url(clientlibs_less.min.f6c06e4….css)',
         backgroundSize: '585px',
-        fontSize: '55px'
+        fontSize: '55px',
+        borderRadius: '10px',
+        background: 'rgba(0,0,0,0.6)',
+        border: '4px solid #fff',
     },
     rightPanel : {
         width: '400px',
@@ -29,21 +32,30 @@ const masjideumarStyle =  makeStyles({
         color: '#fff',
         position: 'relative',
         float: 'right',
-        marginRight: '215px'
+        marginRight: '215px',
+        fontSize: '55px',
+        borderRadius: '10px',
+        background: 'rgba(0,0,0,0.6)',
+        border: '4px solid #fff'
     },
     jumaatTimings : {
         float: 'left',
         clear: 'left',
         marginLeft: '25px',
         fontSize: '55px',
-        color: '#fff'
+        color: '#fff',
+        display: 'block'
+        
     },
-    forecasts : {
+    timingPanel : {
         float: 'left',
         clear: 'left',
         marginTop: '25px'
-    }, 
-    forecastItem : {
+    },
+   
+
+      prayerTime  :{
+        
         width: '310px',
         height: '145px',
         padding: '10px',
@@ -51,9 +63,33 @@ const masjideumarStyle =  makeStyles({
         background: 'rgba(0,0,0,0.6)',
         border: '4px solid #fff',
         float: 'left',
-        margin: '9px',
+        marginLeft: '18px',
         marginTop: '0',
-        textAlign: 'center'
+        textAlign: 'center',
+       
+
+        '& p': {
+            float: 'left',
+            margin: '4px 0 0 2px',
+            fontSize: '50px',
+            textShadow: '0 0 1px rgba(229,229,229,0.6)',
+            fontFamily: 'black_sans',
+            fontWeight: '400',
+            color: '#fff',
+           
+        },
+        '& h3': {
+            margin:'-18px',
+            color: '#fff',
+            fontFamily: 'black_sans',
+            fontWeight: '400',
+            fontSize: '55px',
+            textShadow: '0 0 1px rgba(229,229,229,0.6)',
+            textAlign: 'center',
+            textTransform: 'capitalize',
+            marginBottom: '6px'
+        }
+       
     },
     locationDetail : {
         width: '730px',
