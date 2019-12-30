@@ -1,12 +1,22 @@
 import React, {useState, useEffect} from 'react';
 
-function JumaPanel (data){
-    console.log('style is [', data.announcement)
+function JumaPanel ({juma}){
+    console.log('style is [', juma)
+    if(juma) {
     return (
         <div>
-            {data.announcement}
+        {juma['Title']} <br/>
+        {juma['FirstLine']} <br/>
+        {juma['SecondLine']} <br/>
+        {juma['ThirdLine']} <br/>
+        {juma['FourthLine']} <br/>
+        {juma['FifthLine']}<br/>
+        {juma['SixthLine']} <br/> 
         </div>
     )
+    } else { return(<div>
+        </div>)
+    }
 }
 
 export default JumaPanel

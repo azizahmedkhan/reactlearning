@@ -1,9 +1,6 @@
  import React, {useState, useEffect} from 'react';
 
-function TimingsPanel (data){
-    console.log('style is [', data.style)
-
-  
+function TimingsPanel (data){  
     return (
         <div>
             

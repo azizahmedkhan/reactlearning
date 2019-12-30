@@ -1,11 +1,22 @@
 import React, {useState, useEffect} from 'react';
 
-function Announcement (){
+function Announcement ({announcement}){
+    console.log('style is [', announcement)
 
-    return (
+    if (announcement) {
+        return (
         <div>
-            Announcement
+            {announcement['Title']} <br/>
+            {announcement['FirstLine']} <br/>
+            {announcement['SecondLine']} <br/>
+            {announcement['ThirdLine']} <br/>
+            {announcement['FourthLine']} <br/>
+            {announcement['FifthLine']}<br/>
+            {announcement['SixthLine']} <br/>
         </div>
     )
+        } else { return(<div>
+            </div>)
+        }
 }
-export default Announcement
+export default Announcement 
