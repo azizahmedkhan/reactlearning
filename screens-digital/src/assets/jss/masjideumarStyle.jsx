@@ -20,10 +20,11 @@ const masjideumarStyle =  makeStyles({
         cursor: 'pointer',
         float: 'left',
         margin: '4px 2px 0 0',
+        fontSize: '12px',
     },
     footerRight : {
        
-        fontSize: '12px',
+       
         padding: '0 0 0 5px',
         borderRadius: '5px 5px 0 0',
         display: 'block',

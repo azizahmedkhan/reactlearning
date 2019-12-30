@@ -26,15 +26,15 @@ function Nav() {
           src="https://placekitten.com/64/64"
         />
         <div>
-          <div>Ryan Florence</div>
+          <div>Aziz</div>
           <div>
             <button className="text-button">log out</button>
           </div>
         </div>
       </div>
       <nav className="ChannelNav">
-        {channels.map(channel => (
-          <a href={`/channel/${channel.id}`}># {channel.id}</a>
+        {channels.map((channel,index) => (
+          <a key = {channel.id} href={`/channel/${channel.id}`}># {channel.id}</a>
         ))}
       </nav>
     </div>
