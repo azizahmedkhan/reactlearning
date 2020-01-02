@@ -1,7 +1,8 @@
 import React from 'react'
 import {db} from './firebase'
+import useCollection from './useCollection'
 
-function ChatInputBox() {
+function ChatInputBox({channelId ,user}) {
   return (
     <form 
       onSubmit={event => {
@@ -9,11 +10,12 @@ function ChatInputBox() {
       const value = event.target.elements[0].value
       db
       .collection('channels')
-      .doc('general')
+      .doc(channelId)
       .collection('messages')
       .add({
+        user: db.collection('users').doc(user.uid),
         text: value,
-        createdAt: new Date()
+        createdAt: new Date(),
       })
       event.target.reset()
       console.log(value)
