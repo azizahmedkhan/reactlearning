@@ -1,26 +1,26 @@
  import React, {useState, useEffect} from 'react';
 
-function TimingsPanel (data){  
+function TimingsPanel ({prayerTimings,style}){  
     return (
         <div>
             
-            <PrayerTime  prayer = 'FAJAR' time={data.prayerTimings['FAJAR']} style={data.style}/>
-            <PrayerTime  prayer = 'ZUHAR' time={data.prayerTimings['ZUHAR']} style={data.style} />
-            <PrayerTime  prayer = 'ASAR' time={data.prayerTimings['ASAR']} style={data.style} />
-            <PrayerTime  prayer = 'MAGHRIB' time={data.prayerTimings['MAGHRIB']} style={data.style} />
-            <PrayerTime  prayer = 'ISHA' time={data.prayerTimings['ISHA']} style={data.style} />
+            <PrayerTime  prayer = 'FAJAR' time={prayerTimings['FAJAR']} style={style}/>
+            <PrayerTime  prayer = 'ZUHAR' time={prayerTimings['ZUHAR']} style={style} />
+            <PrayerTime  prayer = 'ASAR' time={prayerTimings['ASAR']} style={style} />
+            <PrayerTime  prayer = 'MAGHRIB' time={prayerTimings['MAGHRIB']} style={style} />
+            <PrayerTime  prayer = 'ISHA' time={prayerTimings['ISHA']} style={style} />
         </div>
     )
 }
 
-function PrayerTime(data) {
+function PrayerTime({prayer, time, style}) {
     return (
-        <div className={data.style}>
-            <h3>{data.prayer}</h3>
+        <div className={style}>
+            <h3>{prayer}</h3>
             <div style={{
                 display: 'inline-block',
                 verticalAlign: 'middle'
-            }}><p><span>{data.time}</span></p>  </div>
+            }}><p><span>{time}</span></p>  </div>
         </div>
     )
 }

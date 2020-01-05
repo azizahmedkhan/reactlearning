@@ -11,15 +11,15 @@ function Header (){
     const classes = masjideumarStyle();
 console.log(masjideumarStyle)
     return (  
-        <div className={classes.weatherHeader}>
+        <div className={classes.header}>
             <div className={classes.mattService}><Weather /></div>
             <div className={classes.headerImage}
             style={{
             backgroundImage: "url(" + image + ")" }}></div>
             <div className={classes.hijriDate}><HijriDate /> </div>
-            <div className={classes.masjidName}>Masjid e Umar</div>
-            <div className={classes.locationOverlay}></div>
+            
         </div>
+       
     )
 }
 

@@ -1,14 +1,15 @@
 
 import React, {useState, useEffect} from 'react';
 import { db } from '../../firebase';
-import Announcement from './Announcement'
+import InfoPanel from './InfoPanel'
 import Clock from './Clock'
 import Header from './Header'
-import JumaPanel from './JumaPanel'
 import TimingsPanel from './TimingsPanel'
 import image from "../../assets/img/masjideumar/light-cloud.jpg"
 import masjideumarStyle from "../../assets/jss/masjideumarStyle.jsx";
 import { mergeClasses } from '@material-ui/styles';
+import classNames from "classnames";
+
 
 
 function SalatTime() {
@@ -20,12 +21,6 @@ function SalatTime() {
       .onSnapshot(snapshot => {
       const docs = [];
        setFields(snapshot.data());
-      
-
-      //  console.log("got>",fields['ANNOUNCEMENT']) 
-      //  console.log('style is [',Object.getOwnPropertyNames(fields['ANNOUNCEMENT']))
-      //  console.log('len', fields['ANNOUNCEMENT'].legth)
-      //  console.log( '1',fields['ANNOUNCEMENT'][1])  
     })
   }, [])
   const classes = masjideumarStyle();
@@ -36,34 +31,39 @@ function SalatTime() {
                          'ISHA':fields['ISHA']}
   const announcement = fields['ANNOUNCEMENT']
   const juma = fields['JUMA']
-  console.log("ANNOUNCEMENT is[",announcement)
-  console.log("JUMA is[",juma)
-
-
-
+  const leftPanel = classNames({
+    [classes.infoPanel]:true,
+    [classes.leftPanel]:true
+  });
+  const rightPanel = classNames({
+    [classes.infoPanel]:true,
+    [classes.rightPanel]:true
+  });
   return (
     <div className={classes.sectionContainer}  style={{
       backgroundImage: "url(" + image + ")" }}>
      
       <Header/>
-      <div className={classes.weatherContentContainer}>
-      <div className={classes.leftPanel}>
-      <Announcement announcement={announcement} />
+      <div className={classes.masjidName}>Masjid e Umar</div>
+      <div className={classes.centerContainer}>
+      
+        <div className={leftPanel}>
+          <InfoPanel info={announcement} />
+        </div>  
+        <div className={classes.clockArea}>
+          <Clock/>
         </div>
-        
-      <div className={classes.locationDetail}>
-        <Clock/>
+        <div className={rightPanel}>
+            <InfoPanel info={juma} />
         </div>
-        <div className={classes.rightPanel}>
-        
-        <JumaPanel juma={juma} />
-        
-          </div>
+      </div>
+      <div>
         <div className={classes.jumaatTimings}>Jamaat Timings </div>
         <div className={classes.timingPanel}>
-          <TimingsPanel prayerTimings = {prayerTimings} style= {classes.prayerTime}/> 
-          </div>
-          <br className={classes.clearfix}/>
+            <TimingsPanel prayerTimings = {prayerTimings} style= {classes.prayerTime}/> 
+            </div>
+            <br className={classes.clearfix}/>
+        
       </div>
      
       <div className={classes.footer}>
@@ -71,7 +71,7 @@ function SalatTime() {
               <span>Mount Roskill Islamic Trust - http://www.masjideumar.co.nz/</span>
         </div>
         <div className={classes.footerRight}>
-            MyScreen.com 
+            Made by screens.digital
         </div>
     </div>
 
