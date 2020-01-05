@@ -16,7 +16,7 @@ console.log(masjideumarStyle)
             <div className={classes.headerImage}
             style={{
             backgroundImage: "url(" + image + ")" }}></div>
-            <div className={classes.hijriDate}><HijriDate /> </div>
+            <HijriDate style={classes.hijriDate}/> 
             
         </div>
        

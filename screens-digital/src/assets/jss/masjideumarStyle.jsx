@@ -103,15 +103,19 @@ const masjideumarStyle =  makeStyles({
         color: '#fff',
     },
     hijriDate :{
-        fontSize:'40px',
-        height:'30px',
-        width:'17%',
+        
+        height:'100%',
+        width:'20%',
         position:'relative',
         float: 'right',
         marginRight: '215px',
         color: '#fff',
-        p :{
-            color: '#fff'
+        color: '#fff',
+        fontSize:'40px',
+        '& p' :{
+            color: '#fff',
+            fontSize:'40px',
+            
         }
     },
     headerImage: {
