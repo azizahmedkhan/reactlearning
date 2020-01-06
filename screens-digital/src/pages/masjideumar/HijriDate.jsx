@@ -9,9 +9,6 @@ function HijriDate ({style}){
     ];
     useEffect(() => {
         let daysAfter = daysAfter || 0;
-        //var date = new Date();
-       
-    
         fetch( "https://api.aladhan.com/gToH?date="+(date.getDate()+daysAfter)+"-"+(date.getMonth()+1)+"-"+date.getFullYear())
             .then(response => {
                 if (!response.ok) { console.error(response) }
@@ -20,14 +17,9 @@ function HijriDate ({style}){
                 }
             }) 
             .then( hijriJSON => {
-                console.log("hijriJSON ",hijriJSON)
                 hijriJSON = hijriJSON.data.hijri
                 setHijriJSON(hijriJSON)
-                console.log("hijriJSON 1",hijriJSON['month'])
-                console.log("hijriJSON 1",hijriJSON['month']['en'])
-                // hijriDate.current.innerHTML=
-                //  "<p>"+(Number(hijriJSON.day))+"-<em>"+hijriJSON['month']['en']+"</em>-"+hijriJSON['year']+"</p>"
-                //  +"<p>"+date.getDate()+"-"+monthNames[date.getMonth()]+"-"+date.getFullYear()+"</p>";
+               
             })
             .catch(err => console.log(err))
       }, [])

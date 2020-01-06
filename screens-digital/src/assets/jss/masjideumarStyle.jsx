@@ -42,7 +42,6 @@ const masjideumarStyle =  makeStyles({
         fontSize: '55px',
         color: '#fff',
         display: 'block'
-        
     },
     timingPanel : {
         float: 'left',

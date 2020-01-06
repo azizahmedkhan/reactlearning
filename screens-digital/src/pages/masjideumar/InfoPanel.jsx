@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { StylesContext } from '@material-ui/styles';
 
 function InfoPanel ({info}){
-    console.log("info is ", info)
     if (info) {
         return (
         <div>
