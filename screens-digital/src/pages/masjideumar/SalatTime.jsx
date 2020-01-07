@@ -14,24 +14,22 @@ import useInterval from './useInterval'
 
 function SalatTime() {
   const [fields, setFields] = useState([]);
-  const[backgroundImage, setBackgroundImage] = useState()
+  const[backgroundImage, setBackgroundImage] = useState(dayImage)
   let screenBackground = useRef();
+  let delay= 1000*60*5
   console.log("SalatTime")
   useInterval (() => {    
     var d = new Date()
     var currentTime =  d.getHours()+d.getMinutes()/60;
-    console.log("Salat interval")
+    console.log("applyBackground", d)
     if(fields['MAGHRIB'] && fields['FAJAR'] ) {
-      console.log("maghrib fajar")
       let fajarTimes = fields['FAJAR'].split(':')
       let fajarMinutes = parseFloat((parseInt(fajarTimes[1])+20)/60);
-      console.log("fajarMinutes", fajarMinutes,' cur minutes', d.getMinutes()/60)
       let fajarTime = parseInt(fajarTimes[0])+fajarMinutes;
 
       let maghribTimes = fields['MAGHRIB'].split(':')
       let maghribMinutes = parseFloat((parseInt(maghribTimes[1])+10)/60);
       let maghribTime = parseInt(maghribTimes[0])+12+maghribMinutes;
-      console.log("maghribTime", maghribTime,"fajar",fajarTime)
 
       if(currentTime > fajarTime) {
         setBackgroundImage(dayImage)
@@ -39,21 +37,8 @@ function SalatTime() {
       if(currentTime > maghribTime) {
         setBackgroundImage(nightImage)
       }
-
-      // if(d.getHours() >= (maghrib_hm[0]+12) 
-      // && d.getMinutes() > (maghrib_hm[1]+10)
-      // && d.getHours() <= (fajar_hm[0]+12) 
-      // && d.getMinutes() < (fajar_hm[1]+10)) {
-      //   console.log("nightImage")
-      //   //screenBackground.backgroundImage=nightImage
-      //   setBackgroundImage(nightImage)
-      // } else {
-      //   console.log("dayImage")
-      //   // screenBackground.backgroundImage=dayImage
-      //   setBackgroundImage(dayImage)
-      // }
     }
-  },1000*60)
+  },delay)
   
   useEffect(() => {
     return db
@@ -80,6 +65,7 @@ function SalatTime() {
     [classes.infoPanel]:true,
     [classes.rightPanel]:true
   });
+
   return (
     <div className={classes.sectionContainer} ref={screenBackground}  style={{
       backgroundImage: "url(" + backgroundImage + ")" }}>

@@ -9,7 +9,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 function Header (){
     const classes = masjideumarStyle();
-console.log(masjideumarStyle)
     return (  
         <div className={classes.header}>
             <div className={classes.mattService}><Weather /></div>
