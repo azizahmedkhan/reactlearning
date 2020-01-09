@@ -3,36 +3,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const masjideumarStyle =  makeStyles({
     sectionContainer :{
-        display: 'grid',
-        gridTemplateColumns: '100%',
-        gridTemplateRows: '13% 3% 43% 28.8% 3%',
-        gridGap: '1em',
+        width: '100%!important',
+        float:'left'
     },
-    header :{
-        /* Start on Row 1 */
-        gridRow: '1',
-        /* Start on the first column line and extend all the to the last column line */
-        
-      },
-      maName :{
-        gridRow: '2',
-        fontSize:'40px',
-        textAlign: 'center',
-        color: '#fff',
-      },
-      clockAndAnnouncements :{
-        gridRow: '3',
-       
-      },
-      JTimings :{
-        gridRow: '4',
-        marginTop: '1em',
-      },
-      
-      footer :{
-        gridRow: '4',        
-      },
-  
+    centerContainer : {
+        float: 'left',
+        clear: 'both',
+        width: '100%',
+        margin: '20px 0 0 10px'
+    },
     infoPanel :{
         width: '25%',
         width: '25%',
@@ -44,7 +23,7 @@ const masjideumarStyle =  makeStyles({
         backgroundSize: '585px',
         fontSize: '55px',
         borderRadius: '10px',
-        marginTop: '2%',
+        marginTop: '5%',
         textAlign:'left'
        
     },
@@ -83,8 +62,8 @@ const masjideumarStyle =  makeStyles({
         textAlign: 'center',
         '& p': {
             float: 'left',
-            margin: '-20px 0 0 2px',
-            fontSize: '65px',
+            margin: '4px 0 0 2px',
+            fontSize: '50px',
             textShadow: '0 0 1px rgba(229,229,229,0.6)',
             fontFamily: 'black_sans',
             fontWeight: '400',
@@ -100,19 +79,21 @@ const masjideumarStyle =  makeStyles({
             textShadow: '0 0 1px rgba(229,229,229,0.6)',
             textAlign: 'center',
             textTransform: 'capitalize',
-            marginBottom: '0px'
+            marginBottom: '6px'
             }
     },
     clockArea : {
-        width: '30%',
+        width: '45%',
         height: '100%',
         color: '#fff',
         position: 'relative',
-        display: 'inline-block',
-        marginLeft: '7%',
-        marginTop: '4%',
+        display: 'inline-block'
     },
-    
+    header: {
+        width: '100%',
+        margin:'0',
+        height: '185px',
+    },
     masjidName : {
         fontSize:'40px',
         height:'5px',
@@ -123,7 +104,7 @@ const masjideumarStyle =  makeStyles({
     hijriDate :{
         
         height:'100%',
-        width:'22%',
+        width:'20%',
         position:'relative',
         float: 'right',
         marginRight: '215px',
@@ -137,10 +118,10 @@ const masjideumarStyle =  makeStyles({
         }
     },
     headerImage: {
-        backgroundSize:'26em',
+        backgroundSize:'448px',
         height:'100%',
-        width:'22%',
-        marginLeft: '27em',
+        width:'25.6%',
+        marginLeft: '380px',
         position:'relative',
         display: 'inline-block',
     },

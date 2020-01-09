@@ -10,7 +10,6 @@ import nightImage from "../../assets/img/masjideumar/clear-night.jpg"
 import masjideumarStyle from "../../assets/jss/masjideumarStyle.jsx";
 import { mergeClasses } from '@material-ui/styles';
 import classNames from "classnames";
-import useInterval from './useInterval'
 
 function SalatTime() {
   const [fields, setFields] = useState([]);
@@ -70,40 +69,59 @@ function SalatTime() {
     <div className={classes.sectionContainer} ref={screenBackground}  style={{
       backgroundImage: "url(" + backgroundImage + ")" }}>
      
-      <Header/>
-      <div className={classes.masjidName}>Masjid e Umar</div>
-      <div className={classes.centerContainer}>
       
-        <div className={leftPanel}>
-          <InfoPanel info={announcement} />
-        </div>  
-        <div className={classes.clockArea}>
-          <Clock/>
-        </div>
-        <div className={rightPanel}>
-            <InfoPanel info={juma} />
-        </div>
+       <Header/> 
+      <div className={classes.maName}>Masjid e Umar</div>
+      <div className = {classes.clockAndAnnouncements} >
+      <div className={leftPanel}>
+      <InfoPanel info={announcement} />
+    </div>  
+    <div className={classes.clockArea}>
+      <Clock/>
+    </div>
+    <div className={rightPanel}>
+        <InfoPanel info={juma} />
+    </div>
       </div>
-      <div>
+      <div className={classes.JTimings}>
         <div className={classes.jumaatTimings}>Jamaat Timings </div>
         <div className={classes.timingPanel}>
             <TimingsPanel prayerTimings = {prayerTimings} style= {classes.prayerTime}/> 
             </div>
             <br className={classes.clearfix}/>
-        
       </div>
      
-      <div className={classes.footer}>
+      <footer className={classes.footer}>
         <div className = {classes.footerLeft}>
               <span>Mount Roskill Islamic Trust - http://www.masjideumar.co.nz/</span>
         </div>
         <div className={classes.footerRight}>
             Made by screens.digital
         </div>
-    </div>
+    </footer>
 
   </div>
 
   );
 }
 export default SalatTime;
+
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}

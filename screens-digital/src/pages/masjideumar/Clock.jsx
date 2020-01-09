@@ -1,5 +1,4 @@
 import React, {useEffect, useRef} from 'react';
-import useInterval from './useInterval'
 function r(el, deg) {
     el.setAttribute('transform', 'rotate('+ deg +' 50 50)')
 }
@@ -82,3 +81,23 @@ function Clock (){
 //     }, [delay]);
 //   }
  export default Clock
+
+ function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}

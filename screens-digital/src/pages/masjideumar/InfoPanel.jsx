@@ -5,13 +5,12 @@ function InfoPanel ({info}){
     if (info) {
         return (
         <div>
-            <div style = {{textAlign:'center'}}>{info['Title']} <br/></div>
+            <span style = {{textAlign:'center'}}>{info['Title']} </span>
             {info['FirstLine']} <br/>
             {info['SecondLine']} <br/>
             {info['ThirdLine']} <br/>
             {info['FourthLine']} <br/>
             {info['FifthLine']}<br/>
-            {info['SixthLine']} <br/>
         </div>
     )
         } else { return(<div>

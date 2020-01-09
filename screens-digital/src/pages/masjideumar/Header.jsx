@@ -10,14 +10,14 @@ import { makeStyles } from '@material-ui/core/styles';
 function Header (){
     const classes = masjideumarStyle();
     return (  
-        <div className={classes.header}>
+        <header className={classes.header}>
             <div className={classes.mattService}><Weather /></div>
             <div className={classes.headerImage}
             style={{
             backgroundImage: "url(" + image + ")" }}></div>
             <HijriDate style={classes.hijriDate}/> 
             
-        </div>
+        </header>
        
     )
 }
