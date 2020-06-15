@@ -8,8 +8,8 @@ function App() {
  
   return user?  (
     <div className="App">
-      <Nav user={user}/>
-      <Router>
+      <Nav user={user} />
+       <Router>
         <Channel path ="channel/:channelId" user={user}/>
         <Redirect from= "/" to ="channel/general" /> 
       </Router>
@@ -18,6 +18,8 @@ function App() {
     <Login />
   )
 }
+
+
 
 function Login () {
   const [authError, setAuthError] = useState(null)
@@ -57,12 +59,12 @@ function useAuth() {
           photoUrl: firebaseUser.photoURL,
           uid: firebaseUser.uid
         }
+        console.log("User["+user)
         setUser(user)
         db
           .collection('users')
           .doc(user.uid)
           .set(user, {merge: true})
-        console.log(user)
       } else {
         setUser(null)
       }

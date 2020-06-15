@@ -3,8 +3,8 @@ import {db} from './firebase'
 
 export default function useCollection (path, orderBy) {
     const [docs, setDocs] = useState([])
-  
     useEffect(() => {
+
       let collection =  db.collection(path)
         if(orderBy) {
          collection =  collection.orderBy(orderBy)  
