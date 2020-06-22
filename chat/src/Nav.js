@@ -6,7 +6,6 @@ import {Link} from '@reach/router'
 function Nav({user}) {
   
   const channels = useCollection ("channels")
-  console.log("Nav user["+user+"] and channels ["+channels+"]")
   return (
     <div className="Nav">
       <div className="User">

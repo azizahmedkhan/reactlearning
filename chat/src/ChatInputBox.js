@@ -18,7 +18,6 @@ function ChatInputBox({channelId ,user}) {
         createdAt: new Date(),
       })
       event.target.reset()
-      console.log(value)
     }} className="ChatInputBox">
       <input name="message" className="ChatInput" placeholder="Message #general" />
     </form>
