@@ -1,0 +1,79 @@
+git clone git clone https://github.com/azizahmedkhan/reactlearning
+   10  pwd
+   11  cd ~
+   12  git clone git clone https://github.com/azizahmedkhan/reactlearning
+   13  git clone git clone https://github.com/azizahmedkhan/reactlearning.git
+   14  git clone https://github.com/azizahmedkhan/reactlearning.git
+   15  cd reactlearning/
+   16  yarn start
+   17  cd chat
+   18  yarn start
+   19  pwd
+   20  git status
+   21  git commit -m "Status update in RTDB" *
+   22  ls node_modules/
+   23  ls .gitignore
+   24  cat .gitignore
+   25  git commit -m "Status update in RTDB" *
+   26  git status
+   27  git add database.rules.json 
+   28  git add firestore.*1
+   29  cat .gitignore
+   30  git status
+   31  git add *
+   32  git status
+   33  git commit -m "Status update in RTDB" *
+   34  git push
+   35  git remote
+   36  git config --get remote.origin.url.
+   37  git config --get remote.origin.url
+   38  git status
+   39  git commit -m "Status update in RTDB" *
+   40  git add *
+   41  git commit -m "Status update in RTDB" *
+   42  git fetch
+   43  git commit -m "Status update in RTDB" *
+   44  git -version
+   45  git --version
+   46  firebase serve --only functions
+   47  npm install firebase-admin --save
+   48  firebase serve --only functions
+   49  npm i -g firebase-tools
+   50  sudo npm i -g firebase-tools
+   51  npm install firebase-admin --save
+   52  firebase serve --only functions
+   53  sudo firebase serve --only functions
+   54       npm install firebase-functions
+   55  cd chat
+   56  yarn build
+   57  firebase deploy
+   58  git add *
+   59  git status
+   60  git rm firebase-debug.log
+   61  git status
+   62  git commit -m "after status update"
+   63  git push
+   64  git add *
+   65  firebase deploy --only functions
+   66  yarn serve
+   67  yarn start
+   68  firebase deploy 
+   69  git status
+   70  git diff database.rules.json 
+   71  firebase deploy 
+   72  firebase deploy 
+   73  firebase deploy 
+   74  cd functions/
+   75  yard add isomorphic-fetch
+   76  yarn add isomorphic-fetch
+   77  cd ..
+   78  firebase deploy 
+   79  firebase deploy 
+   80  firebase deploy 
+   81  yarn start
+   82  firebase functions:config:set clevetbot.key=itisasecret
+   83  firebase functions get
+   84  firebase functions:config:get
+   85  firebase functions:config:get >functions/.runtimeconfig.json
+   86  yarn start
+   87  history
